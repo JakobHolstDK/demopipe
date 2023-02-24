@@ -46,6 +46,11 @@ spec:
           }
         }
         stage('Stage 3') {
+        agent {
+          rancherexecute {
+            defaultContainer 'dockerdemo'
+            }
+         }
           steps {
               script {
                   sh 'echo "Udfører stage 3"'
