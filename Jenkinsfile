@@ -27,9 +27,7 @@ kind: Pod
 spec:
   containers:
   - name: demodocker
-    image: demodocker:latest
-    registryUrl: https://registry.openknowit.com
-    registryCredentialsId: registry
+    image: registry.openknowit.com/demodocker:latest
     imagePullPolicy: Always
     command:
     - sleep
