@@ -26,8 +26,8 @@ pipeline {
 kind: Pod
 spec:
   containers:
-  - name: kaniko
-    image: gcr.io/kaniko-project/executor:debug
+  - name: demodocker
+    image: registry.openknowit.com/demodocker:latest
     imagePullPolicy: Always
     command:
     - sleep
