@@ -29,7 +29,7 @@ spec:
    - name: registry.openknowit.com
   containers:
   - name: demodocker
-    image: registry.openknowit.com/demodocker:latest
+    image: registry.openknowit.com/dockerdemo:latest
     imagePullPolicy: Always
     command:
     - sleep
