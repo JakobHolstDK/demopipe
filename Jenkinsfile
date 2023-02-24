@@ -6,6 +6,8 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     environment {
+        HOME="${env.WORKSPACE}"
+        TMP="${env.WORKSPACE}/TMP"
     }
     stages {
         stage('Unit test') {
