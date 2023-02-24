@@ -21,7 +21,7 @@ pipeline {
         stage('Stage 2') {  
         agent {
           kubernetes {
-            defaultContainer 'dockerdemo'
+            defaultContainer 'demodocker'
             yaml '''
 kind: Pod
 spec:
