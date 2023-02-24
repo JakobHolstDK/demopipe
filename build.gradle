@@ -9,4 +9,10 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.12'
+
+}
+
+clean.doFirst {
+    delete "${rootDir}/build"
+    delete "${rootDir}/cesop_test.log"
 }
