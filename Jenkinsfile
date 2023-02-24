@@ -28,6 +28,8 @@ spec:
   containers:
   - name: demodocker
     image: registry.openknowit.com/demodocker:latest
+    registryUrl: https://registry.openknowit.com
+    registryCredentialsId: registry
     imagePullPolicy: Always
     command:
     - sleep
