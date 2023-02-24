@@ -21,13 +21,13 @@ pipeline {
         stage('Stage 2') {  
         agent {
           kubernetes {
-            defaultContainer 'kaniko'
+            defaultContainer 'demodocker'
             yaml '''
 kind: Pod
 spec:
   containers:
   - name: demodocker
-    image: registry.openknowit.com/demodocker:latest
+    image: demodocker:latest
     registryUrl: https://registry.openknowit.com
     registryCredentialsId: registry
     imagePullPolicy: Always
