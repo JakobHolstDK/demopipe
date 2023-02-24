@@ -21,7 +21,7 @@ pipeline {
         stage('Stage 2') {  
         agent {
           kubernetes {
-            defaultContainer 'demodocker'
+            defaultContainer 'dockerdemo'
             yaml '''
 kind: Pod
 spec:
@@ -47,7 +47,7 @@ spec:
         }
         stage('Stage 3') {
         agent {
-          rancherexecute {
+          kubernetes {
             defaultContainer 'dockerdemo'
             }
          }
