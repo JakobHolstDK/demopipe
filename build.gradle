@@ -1,10 +1,15 @@
-
-apply plugin: 'java'
-sourceCompatibility = 1.8
-version = '0.1.0' 
-
-
-clean.doFirst {
-    delete "${rootDir}/build"
-    delete "${rootDir}/cesop_test.log"
+tasks.register('stage1') {
+    doLast {
+        println 'Hello stage1'
+    }
+}
+tasks.register('stage2') {
+    doLast {
+        println 'Hello stage2'
+    }
+}
+tasks.register('stage3') {
+    doLast {
+        println 'Hello stage3'
+    }
 }

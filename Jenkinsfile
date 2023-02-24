@@ -10,32 +10,29 @@ pipeline {
         TMP="${env.WORKSPACE}/TMP"
     }
     stages {
-        stage('Unit test') {
+        stage('Stage 1') {
           steps {
               script {
-                  sh 'echo "Udfører statisk kodeanalyse og unit tests..."'
-                  sh './gradlew clean check --no-build-cache'
+                  sh 'echo "Udfører stage 1"'
+                  sh './gradlew stage1'
               }
           }
         }
-        stage('Integration test') {
+        stage('Stage 2') {
           steps {
-            lock('wiremock-ports') {
               script {
-                sh 'echo "Udfører integrations-tests..."'
-                sh './gradlew integrationTest'
+                  sh 'echo "Udfører stage 2"'
+                  sh './gradlew stage2'
               }
-            }
           }
         }
-        stage('Byg og upload images') {
-            steps {
-                script {
-                    sh 'npm install vite @vitejs/plugin-vue skat-bootstrap moment-timezone vuex@next axios --registry https://artifactory.ccta.dk/api/npm/ekapital-npm-virtual/'
-                    sh './gradlew jib -Djib.console=plain --info'
-                }
-            }
-
+        stage('Stage 3') {
+          steps {
+              script {
+                  sh 'echo "Udfører stage 3"'
+                  sh './gradlew stage3'
+              }
+          }
         }
    }
 }
