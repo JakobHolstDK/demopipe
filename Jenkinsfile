@@ -17,11 +17,6 @@ pipeline {
                   sh './gradlew clean check --no-build-cache'
               }
           }
-          post {
-              always {
-                  junit keepLongStdio: true, testResults: '**/**/build/test-results/test/*.xml'
-              }
-          }
         }
         stage('Integration test') {
           steps {
