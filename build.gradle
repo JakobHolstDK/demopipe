@@ -13,3 +13,8 @@ tasks.register('stage3') {
         println 'Hello stage3'
     }
 }
+tasks.register('stage4') {
+    doLast {
+        println 'Hello stage4'
+    }
+}

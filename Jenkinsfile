@@ -46,7 +46,8 @@ spec:
       configMap:
         name: docker-registry-config
 '''
-   }
+            }
+          }
           steps {
               script {
                   sh 'echo "Udfører stage 2"'
@@ -59,6 +60,14 @@ spec:
               script {
                   sh 'echo "Udfører stage 3"'
                   sh './gradlew stage3'
+              }
+          }
+        }
+        stage('Stage 4') {
+          steps {
+              script {
+                  sh 'echo "Udfører stage 4"'
+                  sh './gradlew stage4'
               }
           }
         }
