@@ -25,6 +25,8 @@ pipeline {
             yaml '''
 kind: Pod
 spec:
+  imagePullSecrets:
+   - name: registry.openknowit.com
   containers:
   - name: demodocker
     image: registry.openknowit.com/demodocker:latest
