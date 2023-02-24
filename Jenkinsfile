@@ -27,11 +27,6 @@ pipeline {
               }
             }
           }
-          post {
-            always {
-              junit keepLongStdio: true, testResults: '**/**/build/test-results/integrationTest/*.xml'
-            }
-          }
         }
         stage('Byg og upload images') {
             steps {
