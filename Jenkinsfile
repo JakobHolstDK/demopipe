@@ -32,10 +32,7 @@ spec:
     command:
     - sleep
     args:
-    - 99d
-    - name: docker-registry-config
-      configMap:
-        name: docker-registry-config
+    - 60s 
 '''
             }
           }
