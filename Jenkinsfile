@@ -21,7 +21,6 @@ pipeline {
         stage('Stage 2') {  
         agent {
           kubernetes {
-            defaultContainer 'demodocker'
             yaml '''
 kind: Pod
 spec:
@@ -48,7 +47,7 @@ spec:
         stage('Stage 3') {
         agent {
           kubernetes {
-            defaultContainer 'dockerdemo'
+            defaultContainer 'registry.openknowit.com/dockerdemo:latest'
             }
          }
           steps {
